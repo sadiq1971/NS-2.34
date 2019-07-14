@@ -1,61 +1,27 @@
-1. Introduction
-----------------
+Step by step installation of ns-2.34 on ubuntu
 
-Ns-allinone is a package which contains required components and some of
-optional components used in running ns. The package contains an
-"install" script to automatically configure, compile and install these
-components. If you haven't installed ns before and want to quickly try
-ns out, ns-allinone may be easier than getting all the pieces by hand.
- 
-Currently the package contains:
-  
-- Tcl       Tcl release 8.4.18    (required component)
-- Tk        Tk release 8.4.18     (required component)
-- Otcl      otcl release 1.13    (required component)
-- TclCL     tclcl release 1.19  (required component)
-- Ns        ns release 2.33    (required component)
-- Nam       Nam release 1.13       (optional component)
-- Xgraph    xgraph version 12     (optional component)
-- GT-ITM    Georgia Tech Internetwork
-            Topology Modeler      (optional component)
-- SGB       Stanford GraphBase
-            package               (optional component)
-- CWEB      CWeb version 1.0 (?)  (optional component)
-- ZLib      zlib version 1.2.3    (optional component) 
+step 1:Install the basic packages required to install the ns2 
+`sudo apt-get update`
+`sudo apt-get install build-essential autoconf automake libxmu-dev`
 
-2. FEATURES IN ns-allinone-2.32
--------------------------------
+step 2: clone the repository or download it.
+`git clone https://github.com/sadiq1971/NS-2.34.git`
 
-Features in this version include:
- 
-- Self-containing: All installation will be kept in a directory to help
-		   the user manange and use the package. The execution of ns
-		   ns or nam does not need any ther support outside
-		   this directory
+step 3:To install ns2  go to ns-allinone-2.34 directory and run ./install on terminal
+`cd ns-allinone-2.34/`
+`./install`
+it will take 20- 30 min or may be more time to install
 
-- Bugs fixed:      All components inside the package, are the most recent 
-                   versions;
+step 4: After this go to base directory and following command
+cd ns-2.34
+sudo make install  
 
-- Easy to use :    Only one-line command is needed to build all ns
-		   components
+step 5: Run ns
+`ns`
+It will show % sign
+type exit to exit
 
-3. Installing the package
---------------------------
-
-All you need to do is type "./install" under this directory. The install
-script will compile and install the whole package for you. The script also
-will tell you the final installation result.
-
-
-4. More information
---------------------
-
-Ns-allinone is available from
-<http://sourceforge.net/projects/nsnam>
-or
-<http://www.isi.edu/nsnam/ns/ns-build.html>
-
------------------------------
-The nsnam Project
-http://www.nsnam.org
-
+Thats all.
+Every time you modify the code you have to run two command from ns-2.34 directory to modify the executable `ns`
+`make`
+`sudo make install`
